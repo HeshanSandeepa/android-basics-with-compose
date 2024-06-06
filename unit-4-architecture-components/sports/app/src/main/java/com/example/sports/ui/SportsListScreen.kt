@@ -17,7 +17,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,12 +27,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sports.R
-import com.example.sports.data.LocalSportsDataProvider
 import com.example.sports.model.Sport
-import com.example.sports.ui.theme.SportsTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -116,17 +112,26 @@ private fun SportsListImageItem(sport: Sport, modifier: Modifier = Modifier) {
 
 @Composable
 fun SportsList(
-    sports: List<Sport>,
+    sportsUiState: SportsUiState,
     onClick: (Sport) -> Unit,
+    onBackPressed: () -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
+
     LazyColumn(
         contentPadding = contentPadding,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
         modifier = modifier,
     ) {
-        items(sports, key = { sport -> sport.id }) { sport ->
+        item {         SportsAppBar(
+            isShowingListPage = sportsUiState.isShowingListPage,
+            onBackButtonClick = onBackPressed,
+        ) }
+
+
+
+        items(sportsUiState.sportsList, key = { sport -> sport.id }) { sport ->
             SportsListItem(
                 sport = sport,
                 onItemClick = onClick
@@ -135,26 +140,3 @@ fun SportsList(
     }
 }
 
-@Preview
-@Composable
-fun SportsListItemPreview() {
-    SportsTheme {
-        SportsListItem(
-            sport = LocalSportsDataProvider.defaultSport,
-            onItemClick = {}
-        )
-    }
-}
-
-@Preview
-@Composable
-fun SportsListPreview() {
-    SportsTheme {
-        Surface {
-            SportsList(
-                sports = LocalSportsDataProvider.getSportsData(),
-                onClick = {},
-            )
-        }
-    }
-}
