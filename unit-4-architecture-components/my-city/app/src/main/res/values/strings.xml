@@ -1,3 +1,18 @@
 <resources>
+
     <string name="app_name">my-city</string>
+
+    <string name="category_coffee">Coffee shops</string>
+    <string name="category_restaurant">Restaurants</string>
+    <string name="category_kids">Kid-friendly places</string>
+    <string name="category_parks">Parks</string>
+    <string name="category_shopping">Shopping centers</string>
+    <string name="navigation_back">back\n</string>
+
+    <!--    <string name="coffee_">Coffee shops</string>-->
+<!--    <string name="category_restaurant">Restaurants</string>-->
+<!--    <string name="category_kids">Kid-friendly places</string>-->
+<!--    <string name="category_parks">Parks</string>-->
+<!--    <string name="category_shopping">Shopping centers</string>-->
+
 </resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_topbar_padding_bottom">16</dimen>
+    <dimen name="detail_card_outer_padding_horizontal">16</dimen>
+    <dimen name="email_header_content_padding_horizontal">16</dimen>
+    <dimen name="email_header_content_padding_vertical">16</dimen>
+    <dimen name="detail_card_inner_padding">16</dimen>
+    <dimen name="detail_topbar_back_button_padding_horizontal">16</dimen>
+    <dimen name="detail_subject_padding_end">16</dimen>
+</resources>
