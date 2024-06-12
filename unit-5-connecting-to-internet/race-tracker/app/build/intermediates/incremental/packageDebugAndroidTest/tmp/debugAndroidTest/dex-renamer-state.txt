@@ -1,0 +1,7 @@
+#Tue Jun 11 14:52:36 IST 2024
+base.0=/Users/freshmilksoftware/Stack/android-basics-with-compose/unit-5-connecting-to-internet/race-tracker/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
+base.1=/Users/freshmilksoftware/Stack/android-basics-with-compose/unit-5-connecting-to-internet/race-tracker/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
