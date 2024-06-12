@@ -1,4 +1,4 @@
-#Tue Jun 11 19:26:28 IST 2024
+#Wed Jun 12 16:57:49 IST 2024
 base.0=/Users/freshmilksoftware/Stack/android-basics-with-compose/unit-5-connecting-to-internet/mars-photos/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/freshmilksoftware/Stack/android-basics-with-compose/unit-5-connecting-to-internet/mars-photos/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/freshmilksoftware/Stack/android-basics-with-compose/unit-5-connecting-to-internet/mars-photos/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
