@@ -49,7 +49,7 @@ import com.example.my_city.R
 import com.example.my_city.data.Recommendation
 
 @Composable
-fun RecommendationDetailScreen(
+fun RecommendationHomeScreen(
     cityUiState: CityUiState,
     onBackPressed: () -> Unit,
     modifier: Modifier = Modifier,
