@@ -10,23 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ebd7a9-a54f-43de-aef4-3a5715c68db3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Amphibians/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/AmphibianApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/AmphibianApplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/data/AmphibianRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/data/AppContainer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/model/Amphibian.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/network/AmphibianService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/ui/screens/AmphibianScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/java/com/example/amphibians/ui/screens/AmphibianViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/res/drawable/ic_broken_image.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/res/drawable/ic_connection_error.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Amphibians/app/src/main/res/drawable/loading_img.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/marsphotos/MarsPhotosApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/marsphotos/MarsPhotosApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/androidTest/kotlin/ItemDaoTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/main/java/com/example/inventory/ui/AppViewModelProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/main/java/com/example/inventory/ui/AppViewModelProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/main/java/com/example/inventory/ui/home/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/main/java/com/example/inventory/ui/home/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/main/java/com/example/inventory/ui/home/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit-6-introduction-to-sql/inventory-app/app/src/main/java/com/example/inventory/ui/home/HomeViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
