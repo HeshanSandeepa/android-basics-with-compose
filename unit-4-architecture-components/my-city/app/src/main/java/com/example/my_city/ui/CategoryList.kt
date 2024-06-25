@@ -16,6 +16,7 @@
 package com.example.my_city.ui
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -23,24 +24,28 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.my_city.R
 import com.example.my_city.data.Category
-import java.util.Locale
 
 @Composable
-fun CategoryHomeScreen(
+fun CategoryList(
     cityUiState: CityUiState,
     cardPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val categories = cityUiState.categories
+
     LazyColumn(
         modifier = modifier,
         contentPadding = WindowInsets.safeDrawing.asPaddingValues(),
@@ -55,28 +60,57 @@ fun CategoryHomeScreen(
                     .padding(vertical = dimensionResource(R.dimen.topbar_padding_vertical))
             )
         }
-        item {
-            CategoryList(cityUiState = cityUiState, cardPressed = cardPressed)
+        items(categories, key = {category -> category.id}) {category ->
+            CategoryItem(category = category,
+                selected = true,
+                onCardClick = {
+                cardPressed(category)
+            })
         }
     }
 }
 
-
 @Composable
-fun CategoryTopBar(modifier: Modifier = Modifier) {
-    Row(
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier
+fun CategoryItem(
+    category: Category,
+    selected: Boolean,
+    onCardClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = if (selected)
+                MaterialTheme.colorScheme.primaryContainer
+            else
+                MaterialTheme.colorScheme.secondaryContainer
+        ),
+        onClick = onCardClick
     ) {
-        Text(
-            text = stringResource(R.string.app_name).replaceFirstChar {
-                if (it.isLowerCase()) it.titlecase(
-                    Locale.ROOT
-                ) else it.toString()
-            },
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(R.dimen.email_list_item_inner_padding))
+        ) {
+            Row(modifier = modifier) {
+                Icon(
+                    imageVector = category.icon,
+                    contentDescription = stringResource(id = R.string.navigation_back)
+                )
+                Text(
+                    text = stringResource(id = category.name),
+                    style = MaterialTheme.typography.labelMedium
+                )
+            }
+            Text(
+                text = stringResource(id = category.description),
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.padding(
+                    top = dimensionResource(R.dimen.email_list_item_header_subject_spacing),
+                    bottom = dimensionResource(R.dimen.email_list_item_subject_body_spacing)
+                ),
+            )
+        }
     }
 }

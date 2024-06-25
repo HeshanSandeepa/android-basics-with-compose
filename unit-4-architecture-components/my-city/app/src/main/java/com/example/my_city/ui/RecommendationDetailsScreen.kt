@@ -76,7 +76,7 @@ fun RecommendationDetailScreen(
                     )
                 }
                 RecommendationCard(
-                    recommendation = cityUiState.currentRecommendation,
+                    recommendation = cityUiState.currentRecommendation!!,
                     modifier = if (isFullScreen) {
                         Modifier.padding(horizontal = dimensionResource(R.dimen.detail_card_outer_padding_horizontal))
                     } else {
@@ -116,7 +116,7 @@ private fun RecommendationDetailsScreenTopBar(
                 .padding(end = dimensionResource(R.dimen.detail_subject_padding_end))
         ) {
             Text(
-                text = cityUiState.currentRecommendation.name,
+                text = cityUiState.currentRecommendation!!.name,
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

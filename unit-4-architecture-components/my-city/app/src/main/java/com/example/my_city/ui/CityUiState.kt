@@ -20,7 +20,7 @@ import com.example.my_city.data.Recommendation
 
 data class CityUiState(
     val categories:  List<Category> = listOf(),
-    val currentCategory: Category ,
-    val currentRecommendation: Recommendation ,
+    val currentCategory: Category?,
+    val currentRecommendation: Recommendation?,
     val isShowingHomepage: Boolean = true
 )
