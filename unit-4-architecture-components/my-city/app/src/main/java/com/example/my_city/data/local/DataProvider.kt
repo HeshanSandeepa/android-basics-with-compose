@@ -26,12 +26,12 @@ import com.example.my_city.data.Recommendation
 
 
 /**
- * An static data store of [Account]s. This includes both [Account]s owned by the current user and
- * all [Account]s of the current user's contacts.
+ * An static data store of [Category]s. This includes both [Category]s owned by the current user and
+ * all [Category]s of the current user's contacts.
  */
 object DataProvider {
 
-    private val categories = listOf(
+     val categories = listOf(
         Category(id = 2L,
             icon =  Icons.Outlined.Home,
             name = R.string.category_coffee,
@@ -50,7 +50,7 @@ object DataProvider {
         Category(id = 3L,
             icon =  Icons.Outlined.AccountCircle,
             name = R.string.category_restaurant,
-            description = R.string.category_coffee,
+            description = R.string.category_restaurant,
             recommendations = listOf(
                 Recommendation(id = 31L,
                     categoryId = 3L,
@@ -65,7 +65,7 @@ object DataProvider {
         Category(id = 4L,
             icon =  Icons.Outlined.AccountCircle,
             name = R.string.category_kids,
-            description = R.string.category_coffee,
+            description = R.string.category_kids,
             recommendations = listOf(
                 Recommendation(id = 41L,
                     categoryId = 4L,
@@ -80,7 +80,7 @@ object DataProvider {
         Category(id = 5L,
             icon =  Icons.Outlined.LocationOn,
             name = R.string.category_parks,
-            description = R.string.category_coffee,
+            description = R.string.category_parks,
             recommendations = listOf(
                 Recommendation(id = 51L,
                     categoryId = 5L,
@@ -95,7 +95,7 @@ object DataProvider {
         Category(id = 6L,
             icon =  Icons.Outlined.ShoppingCart,
             name = R.string.category_shopping,
-            description = R.string.category_coffee,
+            description = R.string.category_shopping,
             recommendations = listOf(
                 Recommendation(id = 61L,
                     categoryId = 6L,
