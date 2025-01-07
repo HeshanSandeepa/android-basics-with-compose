@@ -16,13 +16,10 @@
 package com.example.my_city.ui
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,34 +30,29 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.my_city.R
 import com.example.my_city.data.Category
+import com.example.my_city.ui.util.CityContentType
 import java.util.Locale
 
 @Composable
 fun CategoryHomeScreen(
     cityUiState: CityUiState,
+    cityContentType: CityContentType,
     cardPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    LazyColumn(
-        modifier = modifier,
-        contentPadding = WindowInsets.safeDrawing.asPaddingValues(),
+
+    Column(modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(
             16.dp
+        )) {
+        CategoryTopBar(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = dimensionResource(R.dimen.topbar_padding_vertical))
         )
-    ) {
-        item {
-            CategoryTopBar(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = dimensionResource(R.dimen.topbar_padding_vertical))
-            )
-        }
-        item {
-            CategoryList(cityUiState = cityUiState, cardPressed = cardPressed)
-        }
+        CategoryList(cityUiState = cityUiState, cardPressed = cardPressed)
     }
 }
-
 
 @Composable
 fun CategoryTopBar(modifier: Modifier = Modifier) {

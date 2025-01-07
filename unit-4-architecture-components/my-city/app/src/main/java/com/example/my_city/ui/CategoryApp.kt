@@ -21,6 +21,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.my_city.data.Category
+import com.example.my_city.ui.util.CityContentType
 
 
 @Composable
@@ -31,31 +32,31 @@ fun CategoryApp(
     val viewModel: CategoryViewModel = viewModel()
     val cityUiState = viewModel.uiState.collectAsState().value
 
-//    val navigationType: ReplyNavigationType
-//    val contentType: ReplyContentType
-//
-//    when (windowSize) {
-//        WindowWidthSizeClass.Compact -> {
-//            navigationType = ReplyNavigationType.BOTTOM_NAVIGATION
-//            contentType = ReplyContentType.LIST_ONLY
-//        }
-//        WindowWidthSizeClass.Medium -> {
-//            navigationType = ReplyNavigationType.NAVIGATION_RAIL
-//            contentType = ReplyContentType.LIST_ONLY
-//        }
-//        WindowWidthSizeClass.Expanded -> {
-//            navigationType = ReplyNavigationType.PERMANENT_NAVIGATION_DRAWER
-//            contentType = ReplyContentType.LIST_AND_DETAIL
-//        }
-//        else -> {
-//            navigationType = ReplyNavigationType.BOTTOM_NAVIGATION
-//            contentType = ReplyContentType.LIST_ONLY
-//        }
-//    }
+    //  val navigationType: ReplyNavigationType
+    val contentType: CityContentType
+
+    when (windowSize) {
+        WindowWidthSizeClass.Compact -> {
+            // navigationType = ReplyNavigationType.BOTTOM_NAVIGATION
+            contentType = CityContentType.LIST_ONLY
+        }
+        WindowWidthSizeClass.Medium -> {
+            //  navigationType = ReplyNavigationType.NAVIGATION_RAIL
+            contentType = CityContentType.LIST_ONLY
+        }
+        WindowWidthSizeClass.Expanded -> {
+            //  navigationType = ReplyNavigationType.PERMANENT_NAVIGATION_DRAWER
+            contentType = CityContentType.LIST_AND_DETAIL
+        }
+        else -> {
+            //  navigationType = ReplyNavigationType.BOTTOM_NAVIGATION
+            contentType = CityContentType.LIST_ONLY
+        }
+    }
 
     CategoryHomeScreen(
 //        navigationType = navigationType,
-//        contentType = contentType,
+        cityContentType = contentType,
         cityUiState = cityUiState,
 //        onTabPressed = { mailboxType: MailboxType ->
 //            viewModel.updateCurrentMailbox(mailboxType = mailboxType)

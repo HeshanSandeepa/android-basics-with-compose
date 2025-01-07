@@ -15,6 +15,7 @@
  */
 package com.example.my_city.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,24 +28,24 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.my_city.R
-import com.example.my_city.data.Category
+import com.example.my_city.data.Recommendation
 
 @Composable
-fun CategoryList(
+fun RecommendationList(
     cityUiState: CityUiState,
-    cardPressed: (Category) -> Unit,
+    cardPressed: (Recommendation) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val categories = cityUiState.categories
+    val recommendations = cityUiState.currentCategory!!.recommendations
 
     LazyColumn(
         modifier = modifier,
@@ -53,19 +54,19 @@ fun CategoryList(
             16.dp
         )
     ) {
-        items(categories, key = {category -> category.id}) {category ->
-            CategoryItem(category = category,
+        items(recommendations, key = {recommendation -> recommendation.id}) {recommendation ->
+            RecommendationItem(recommendation = recommendation,
                 selected = true,
                 onCardClick = {
-                cardPressed(category)
-            })
+                    cardPressed(recommendation)
+                })
         }
     }
 }
 
 @Composable
-fun CategoryItem(
-    category: Category,
+fun RecommendationItem(
+    recommendation: Recommendation,
     selected: Boolean,
     onCardClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -86,17 +87,18 @@ fun CategoryItem(
                 .padding(dimensionResource(R.dimen.email_list_item_inner_padding))
         ) {
             Row(modifier = modifier) {
-                Icon(
-                    imageVector = category.icon,
-                    contentDescription = stringResource(id = R.string.navigation_back)
+                Image(
+                    painter = painterResource(id = recommendation.image),
+                    contentDescription = stringResource(id = R.string.dog_content_description)
                 )
+
                 Text(
-                    text = stringResource(id = category.name),
+                    text = recommendation.name,
                     style = MaterialTheme.typography.labelMedium
                 )
             }
             Text(
-                text = stringResource(id = category.description),
+                text = recommendation.description,
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(

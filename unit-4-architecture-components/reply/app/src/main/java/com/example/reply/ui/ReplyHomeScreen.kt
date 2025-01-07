@@ -60,7 +60,7 @@ import com.example.reply.ui.utils.ReplyContentType
 import com.example.reply.ui.utils.ReplyNavigationType
 
 @Composable
-fun ReplyHomeScreen(
+fun  ReplyHomeScreen(
     navigationType: ReplyNavigationType,
     contentType: ReplyContentType,
     replyUiState: ReplyUiState,
